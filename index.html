@@ -24,9 +24,34 @@
   .platform-btn { flex: 1; padding: 12px 10px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: transparent; color: var(--muted); font-family: 'Space Grotesk', sans-serif; font-size: 0.82rem; font-weight: 600; cursor: pointer; transition: all 0.2s; display: flex; align-items: center; justify-content: center; gap: 8px; }
   .platform-btn.active-fb { background: rgba(255,200,0,0.12); border-color: var(--gold); color: var(--gold); }
   .platform-btn.active-li { background: rgba(0,247,255,0.1); border-color: var(--cyan); color: var(--cyan); }
+  .platform-btn.active-biz { background: linear-gradient(135deg, rgba(255,200,0,0.12), rgba(0,247,255,0.1)); border-color: var(--gold); color: #fff; }
   .platform-hint { font-size: 0.78rem; color: var(--muted); padding: 10px 14px; border-radius: 6px; margin-bottom: 20px; line-height: 1.5; }
   .platform-hint.fb-hint { background: rgba(255,200,0,0.05); border-left: 2px solid var(--gold); }
   .platform-hint.li-hint { background: rgba(0,247,255,0.05); border-left: 2px solid var(--cyan); }
+  .platform-hint.biz-hint { background: linear-gradient(90deg, rgba(255,200,0,0.05), rgba(0,247,255,0.04)); border-left: 2px solid var(--gold); }
+
+  /* LI-ONLY SECTIONS (templates + lens) */
+  .li-only-section { margin-bottom: 24px; }
+  .li-only-label { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
+  .li-only-label.li-active { color: var(--cyan); }
+  .li-only-badge { font-size: 0.65rem; font-weight: 700; padding: 2px 7px; border-radius: 4px; letter-spacing: 0.06em; background: rgba(0,247,255,0.06); border: 1px solid rgba(0,247,255,0.15); color: rgba(144,144,168,0.5); }
+  .li-only-label.li-active .li-only-badge { color: var(--cyan); border-color: rgba(0,247,255,0.4); background: rgba(0,247,255,0.1); }
+
+  /* TEMPLATE GRID */
+  .template-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
+  .tpl-btn { padding: 10px 8px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.07); background: rgba(255,255,255,0.02); color: rgba(144,144,168,0.4); font-family: 'Space Grotesk', sans-serif; font-size: 0.76rem; font-weight: 600; cursor: not-allowed; transition: all 0.2s; text-align: center; line-height: 1.4; pointer-events: none; }
+  .tpl-btn .tpl-icon { display: block; font-size: 1.1rem; margin-bottom: 4px; }
+  .tpl-btn.unlocked { color: var(--muted); border-color: rgba(0,247,255,0.15); background: rgba(0,247,255,0.03); cursor: pointer; pointer-events: auto; }
+  .tpl-btn.unlocked:hover { border-color: rgba(0,247,255,0.35); color: #e8e8f0; background: rgba(0,247,255,0.07); }
+  .tpl-btn.selected { border-color: var(--cyan); background: rgba(0,247,255,0.12); color: var(--cyan); }
+
+  /* LENS TOGGLE */
+  .lens-row { display: flex; gap: 8px; }
+  .lens-btn { flex: 1; padding: 10px 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.07); background: rgba(255,255,255,0.02); color: rgba(144,144,168,0.4); font-family: 'Space Grotesk', sans-serif; font-size: 0.8rem; font-weight: 600; cursor: not-allowed; transition: all 0.2s; pointer-events: none; display: flex; align-items: center; gap: 8px; justify-content: center; }
+  .lens-btn.unlocked { color: var(--muted); border-color: rgba(0,247,255,0.15); background: rgba(0,247,255,0.03); cursor: pointer; pointer-events: auto; }
+  .lens-btn.unlocked:hover { border-color: rgba(0,247,255,0.35); color: #e8e8f0; background: rgba(0,247,255,0.07); }
+  .lens-btn.selected { border-color: var(--cyan); background: rgba(0,247,255,0.12); color: var(--cyan); }
+
   textarea, input[type="text"] { width: 100%; background: #0a0a0f; border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; color: #e8e8f0; font-family: 'Inter', sans-serif; font-size: 0.95rem; padding: 14px 16px; resize: vertical; outline: none; transition: border-color 0.2s; line-height: 1.6; }
   textarea:focus, input[type="text"]:focus { border-color: rgba(255,200,0,0.4); }
   textarea { min-height: 100px; }
@@ -58,11 +83,26 @@
   .tip { font-size: 0.8rem; color: var(--muted); line-height: 1.6; padding: 12px 16px; background: rgba(0,247,255,0.04); border-left: 2px solid var(--cyan); border-radius: 4px; margin-top: 20px; }
   .img-label { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); }
   .img-sublabel { font-size: 0.78rem; color: var(--muted); margin-bottom: 12px; }
-  .li-badge { display: inline-block; background: rgba(0,247,255,0.1); border: 1px solid rgba(0,247,255,0.25); color: var(--cyan); font-size: 0.7rem; font-weight: 700; padding: 2px 8px; border-radius: 4px; margin-left: 8px; vertical-align: middle; letter-spacing: 0.06em; }
+
+  /* REMIX STRIP */
+  .remix-strip { margin-top: 24px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.07); }
+  .remix-label { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 10px; }
+  .remix-row { display: flex; gap: 8px; flex-wrap: wrap; }
+  .remix-btn { padding: 8px 14px; border-radius: 8px; border: 1px solid rgba(255,200,0,0.25); background: rgba(255,200,0,0.06); color: var(--gold); font-family: 'Space Grotesk', sans-serif; font-size: 0.78rem; font-weight: 600; cursor: pointer; transition: all 0.2s; }
+  .remix-btn:hover { background: rgba(255,200,0,0.14); border-color: var(--gold); }
+  .remix-btn.remix-loading { opacity: 0.5; cursor: not-allowed; }
+  .remix-output { margin-top: 16px; display: none; }
+  .remix-output.visible { display: block; }
+  .remix-output-label { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; display: flex; justify-content: space-between; align-items: center; }
+  .remix-post-text { color: #e8e8f0; font-size: 0.95rem; line-height: 1.75; white-space: pre-wrap; word-break: break-word; background: rgba(255,200,0,0.04); border: 1px solid rgba(255,200,0,0.12); border-radius: 10px; padding: 16px; }
+  .remix-copy-btn { background: rgba(255,200,0,0.1); border: 1px solid rgba(255,200,0,0.3); color: var(--gold); padding: 5px 12px; border-radius: 6px; font-size: 0.75rem; font-weight: 600; font-family: 'Space Grotesk', sans-serif; cursor: pointer; }
+  .remix-copy-btn:hover { background: rgba(255,200,0,0.2); }
+  .remix-copy-btn.copied { color: var(--cyan); border-color: var(--cyan); background: rgba(0,247,255,0.1); }
+  .remix-spinner { display: inline-block; width: 14px; height: 14px; border: 2px solid rgba(255,200,0,0.2); border-top-color: var(--gold); border-radius: 50%; animation: spin 0.8s linear infinite; vertical-align: middle; margin-right: 6px; }
 </style>
 </head>
 <body>
-<div class="container">
+
 
   <div class="header">
     <div class="eyebrow">Content Engine</div>
@@ -75,12 +115,59 @@
     <!-- PLATFORM TOGGLE -->
     <span class="input-label">Where are you posting?</span>
     <div class="platform-row">
-      <button class="platform-btn active-fb" id="btn-fb" onclick="setPlatform('fb')">📘 Personal Facebook</button>
+      <button class="platform-btn active-fb" id="btn-fb" onclick="setPlatform('fb')">📘 Personal FB</button>
+      <button class="platform-btn" id="btn-biz" onclick="setPlatform('biz')">⚡ All Web FB</button>
       <button class="platform-btn" id="btn-li" onclick="setPlatform('li')">💼 LinkedIn</button>
     </div>
 
     <div class="platform-hint fb-hint" id="fb-hint">AAVE-comfortable, real talk, no jargon. Your people, your voice. No CTA, no hustle.</div>
+    <div class="platform-hint biz-hint" id="biz-hint" style="display:none">The middle ground. Still you, still conversational, but you're wearing the All Web hat. Educational first, soft CTA allowed. Local business owners are listening.</div>
     <div class="platform-hint li-hint" id="li-hint" style="display:none">Strategic operator energy. Contrarian insights. Professional but grounded. You're the authority in the room.</div>
+
+    <!-- LINKEDIN TEMPLATE SELECTOR -->
+    <div class="li-only-section">
+      <div class="li-only-label" id="tpl-label">
+        LinkedIn Template Angle <span class="li-only-badge">LinkedIn only</span>
+      </div>
+      <div class="template-grid">
+        <button class="tpl-btn" id="tpl-none" onclick="setTemplate('none')">
+          <span class="tpl-icon">✦</span>No Template
+        </button>
+        <button class="tpl-btn" id="tpl-hook" onclick="setTemplate('hook')">
+          <span class="tpl-icon">🎯</span>Tweet Hook
+        </button>
+        <button class="tpl-btn" id="tpl-fail" onclick="setTemplate('fail')">
+          <span class="tpl-icon">😬</span>Failure / Embarrass
+        </button>
+        <button class="tpl-btn" id="tpl-tool" onclick="setTemplate('tool')">
+          <span class="tpl-icon">🔍</span>Hidden Tool
+        </button>
+        <button class="tpl-btn" id="tpl-learn" onclick="setTemplate('learn')">
+          <span class="tpl-icon">📚</span>Lessons Learned
+        </button>
+        <button class="tpl-btn" id="tpl-give" onclick="setTemplate('give')">
+          <span class="tpl-icon">🎁</span>Viral Giveaway
+        </button>
+        <button class="tpl-btn" id="tpl-contra" onclick="setTemplate('contra')" style="grid-column: 1 / -1;">
+          <span class="tpl-icon">🔄</span>Contrarian Reframe — "the gurus said X... so what's this about?"
+        </button>
+      </div>
+    </div>
+
+    <!-- LINKEDIN LENS TOGGLE -->
+    <div class="li-only-section">
+      <div class="li-only-label" id="lens-label">
+        Content Lens <span class="li-only-badge">LinkedIn only</span>
+      </div>
+      <div class="lens-row">
+        <button class="lens-btn" id="lens-operator" onclick="setLens('operator')">
+          💡 Operator Angle — what does this mean for my service biz?
+        </button>
+        <button class="lens-btn" id="lens-open" onclick="setLens('open')">
+          🌐 Open Angle — let the topic lead
+        </button>
+      </div>
+    </div>
 
     <!-- INPUT TYPE TOGGLE -->
     <span class="input-label">What are you working with?</span>
@@ -111,9 +198,10 @@
     <div class="error-msg" id="error-msg"></div>
   </div>
 
+  <!-- OUTPUT CARD -->
   <div class="output-card" id="output-card">
     <div class="output-header">
-      <span class="output-label" id="post-label">Your Facebook Post</span>
+      <span class="output-label" id="post-label">Your Post</span>
       <button class="copy-btn" id="copy-btn" onclick="copyPost()">Copy Post</button>
     </div>
     <div class="post-output" id="post-output"></div>
@@ -121,10 +209,30 @@
     <div class="section-divider"></div>
     <div class="output-header">
       <span class="img-label">Image Prompt</span>
-      <button class="copy-btn-gold" id="copy-img-btn" onclick="copyImage()">Copy Prompt</button>
+      <div style="display:flex;gap:8px;">
+        <button class="copy-btn-gold" id="copy-img-btn" onclick="copyImage()">Copy Prompt</button>
+        <button class="copy-btn-gold" id="chatgpt-btn" onclick="openChatGPT()" title="Copies prompt + opens ChatGPT image generator">🤖 Open in ChatGPT</button>
+      </div>
     </div>
-    <p class="img-sublabel">Works in ChatGPT or Canva AI. Copy, paste, generate, post and ghost. 👻</p>
+    <p class="img-sublabel">Copy prompt → paste into ChatGPT or Canva AI. Or hit "Open in ChatGPT" to do both at once. 👻</p>
     <div class="img-output" id="img-output"></div>
+
+    <!-- REMIX STRIP -->
+    <div class="remix-strip" id="remix-strip">
+      <div class="remix-label">Remix this post for another platform</div>
+      <div class="remix-row">
+        <button class="remix-btn" id="remix-fb" onclick="remixPost('fb')">📘 Personal FB — slow it down</button>
+        <button class="remix-btn" id="remix-biz" onclick="remixPost('biz')">⚡ All Web FB — tighten it up</button>
+        <button class="remix-btn" id="remix-li" onclick="remixPost('li')">💼 LinkedIn — operator level</button>
+      </div>
+      <div class="remix-output" id="remix-output">
+        <div class="remix-output-label">
+          <span id="remix-output-label-text">Remixed Post</span>
+          <button class="remix-copy-btn" id="remix-copy-btn" onclick="copyRemix()">Copy</button>
+        </div>
+        <div class="remix-post-text" id="remix-post-text"></div>
+      </div>
+    </div>
   </div>
 
 </div>
@@ -132,19 +240,165 @@
 <script>
   let currentMode = 'topic';
   let currentPlatform = 'fb';
+  let currentTemplate = 'none';
+  let currentLens = 'operator';
+  let lastGeneratedPost = '';
+
+  const templates = {
+    none: null,
+    hook: {
+      name: 'Tweet Hook',
+      prompt: `Use the Tweet Hook post structure. Open with a bold, short hook line formatted like a tweet — grabs attention fast. Then expand with your insight using short punchy paragraphs. Loose rhythm: name your best method or recommendation, contrast the wrong version vs. the right version, list 2-3 outcomes, close with a key takeaway. Weave the topic naturally into this skeleton. Do NOT copy the template literally — use it as rhythm only. All content must come from the topic provided.`
+    },
+    fail: {
+      name: 'Failure / Embarrassment',
+      prompt: `Use the Failure/Embarrassment post structure. Open with a vulnerable admission that names a common pain point. Reference relevant credentials or years of experience — then reveal a surprising or embarrassing result that contradicts those credentials. Name the unconventional action taken instead. Give 2-3 actionable suggestions. Close with a specific measurable result, a counterintuitive reframe, and a philosophical one-liner. End with a question for the audience. The failure must feel real — no fake humility.`
+    },
+    tool: {
+      name: 'Hidden Tool / Resource',
+      prompt: `Use the Hidden Tool or Resource post structure. Open by declaring a specific tool, resource, or method as the most underrated in its category — free or accessible. Share a specific prompt or method for using it. Describe 2-3 specific outputs or results it gives. Note it's not sponsored. End with a deeper use case or next step. Tone is a knowledgeable friend sharing a find, not a salesperson.`
+    },
+    learn: {
+      name: 'Lessons from Learning',
+      prompt: `Use the Lessons from Learning post structure. Open with the number of books, courses, or resources consumed on this topic. List 3 of the most important lessons with attribution (author, title, or source). Keep each lesson tight: distillation + attribution. After the 3 lessons, tease that there are more and ask if the audience wants a part 2. Close with a question or soft CTA. Lessons should feel curated and hard-won, not obvious.`
+    },
+    give: {
+      name: 'Viral Giveaway',
+      prompt: `Use the Viral Giveaway post structure. Open with social proof — results, outcomes, or data points. Name the single variable that connected all of them. Introduce a guide or resource that breaks it down. Use exclusivity framing (typically only shared with clients). Name 3-4 value bullets for what the resource covers. Close with a comment trigger — ask people to comment a word to receive it. Include a PS with a promise of a specific result even from implementing just one tactic. The giveaway must feel directly relevant to the topic.`
+    },
+    contra: {
+      name: 'Contrarian Reframe',
+      prompt: `Use the Contrarian Reframe post structure. This is the "wait, hold on" post — externally triggered, audience-facing. The move: name what the conventional wisdom said, name what just changed or emerged, then ask the uncomfortable question out loud on behalf of the audience.
+
+Structure:
+1. Open by naming the received wisdom — what "everyone" was told, what the gurus preached, what the playbook said. State it plainly and without mockery.
+2. Introduce the contradiction — the new data, the new platform change, the thing that just happened that doesn't square with that advice. Be specific. Name the thing.
+3. Sit in the tension. Don't rush to a resolution. Ask the question the audience is already thinking but hasn't said out loud: "So what was that about?" or "Then what exactly were we optimizing for?" or "If that was true then, what does this mean now?"
+4. Offer a reframe — not a full answer, but a sharper way to think about it going forward. One or two sentences max. Leave room for the audience to land somewhere themselves.
+5. Close with a direct question that invites the audience to share where they're at with it.
+
+Tone: measured skepticism, not outrage. She's not dragging anyone — she's thinking out loud with receipts. The authority comes from the fact that she saw this coming or tested it herself. Do NOT make it preachy or lecture-y. The goal is to make the reader nod and go "...yeah, actually."
+
+This template pairs especially well with URL input — an article, a platform update, a trend piece — where the external source is the contradiction that blows up the old advice.`
+    }
+  };
+
+  const remixInstructions = {
+    fb: {
+      label: 'Personal FB Remix',
+      instruction: `Take the LinkedIn post below and remix it for Terassah's PERSONAL Facebook page. This means:
+- Strip the operator framing and professional positioning completely
+- Slow it way down — barbecue conversation energy, not boardroom energy
+- AAVE-comfortable. Natural, not performative. Like texting your cousin who happens to know everything about marketing.
+- Same core insight, but translated for regular people, local business owners, friends — not marketing professionals
+- Shorter sentences. More breathing room. Let the thought land.
+- NO em dashes. NO jargon. NO "Here is / Here are." NO hype words.
+- NO call to action — she's sharing, not selling
+- End with something that makes them think, not something that makes them click
+- Max 3-4 purposeful emojis
+- 100-250 words max
+- Do NOT include an image prompt — just the post`
+    },
+    biz: {
+      label: 'All Web FB Remix',
+      instruction: `Take the LinkedIn post below and remix it for the ALL WEB LLC business Facebook page. This means:
+- Keep the business angle but make it local and accessible — Newnan GA, Coweta County, Metro Atlanta small business owners
+- Tighten it up — shorter than the LinkedIn version, punchier
+- Friendly expert energy at a local chamber mixer — not texting your cousin, not a corporate boardroom either
+- Educational first — lead with what affects THEIR business, not with All Web
+- ONE soft CTA allowed at the end ONLY if it follows naturally from the topic — invitation energy, not hustle energy. If a CTA fits, use allwebllc.com/audit as the link. If it does not flow from the topic, skip it and end with a thought-provoker instead.
+- NO em dashes. NO jargon. NO "Here is / Here are." NO hype words.
+- First person singular only — never "we"
+- 2-3 purposeful emojis max
+- 2-3 local/relevant hashtags at the end (e.g. #NewnanGA #SmallBusiness)
+- 100-200 words max
+- Do NOT include an image prompt — just the post`
+    },
+    li: {
+      label: 'LinkedIn Remix',
+      instruction: `Take the post below and remix it for LinkedIn with full operator authority. This means:
+- Tighten the structure, sharpen the insight, elevate the positioning
+- Strategic operator energy — she's the authority in the room without announcing it
+- Contrarian angle if one exists — what does she see that others miss?
+- Strong opening line that stops the scroll — provocation, surprising stat, or blunt truth
+- Short paragraphs with line breaks for feed readability
+- NO em dashes. NO jargon. NO "Here is / Here are." NO hype words.
+- First person singular only
+- 1-2 emojis max
+- 3-5 strategic hashtags at the end
+- End with a question or insight that invites thoughtful response
+- 150-300 words
+- Do NOT include an image prompt — just the post`
+    }
+  };
 
   function setPlatform(platform) {
     currentPlatform = platform;
     document.getElementById('btn-fb').className = 'platform-btn' + (platform === 'fb' ? ' active-fb' : '');
+    document.getElementById('btn-biz').className = 'platform-btn' + (platform === 'biz' ? ' active-biz' : '');
     document.getElementById('btn-li').className = 'platform-btn' + (platform === 'li' ? ' active-li' : '');
     document.getElementById('fb-hint').style.display = platform === 'fb' ? 'block' : 'none';
+    document.getElementById('biz-hint').style.display = platform === 'biz' ? 'block' : 'none';
     document.getElementById('li-hint').style.display = platform === 'li' ? 'block' : 'none';
+
+    const isLI = platform === 'li';
+
+    // Template section
+    const tplLabel = document.getElementById('tpl-label');
+    tplLabel.className = 'li-only-label' + (isLI ? ' li-active' : '');
+    document.querySelectorAll('.tpl-btn').forEach(btn => {
+      if (isLI) { btn.classList.add('unlocked'); }
+      else { btn.classList.remove('unlocked', 'selected'); }
+    });
+    if (isLI) { setTemplate(currentTemplate); }
+    else { currentTemplate = 'none'; }
+
+    // Lens section
+    const lensLabel = document.getElementById('lens-label');
+    lensLabel.className = 'li-only-label' + (isLI ? ' li-active' : '');
+    document.querySelectorAll('.lens-btn').forEach(btn => {
+      if (isLI) { btn.classList.add('unlocked'); }
+      else { btn.classList.remove('unlocked', 'selected'); }
+    });
+    if (isLI) { setLens(currentLens); }
+    else { currentLens = 'operator'; }
+
+    // Generate button
     const btn = document.getElementById('gen-btn');
     btn.className = 'generate-btn' + (platform === 'li' ? ' li-mode' : '');
-    btn.textContent = platform === 'li' ? 'Write My LinkedIn Post + Image Prompt 💼' : 'Write My Post + Image Prompt 🔥';
-    document.getElementById('post-label').textContent = platform === 'li' ? 'Your LinkedIn Post' : 'Your Facebook Post';
-    document.getElementById('loading-text').textContent = platform === 'li' ? 'Putting on your operator hat...' : 'Cooking something up in your voice...';
+    if (platform === 'li') {
+      btn.textContent = 'Write My LinkedIn Post + Image Prompt 💼';
+      document.getElementById('post-label').textContent = 'Your LinkedIn Post';
+      document.getElementById('loading-text').textContent = 'Putting on your operator hat...';
+    } else if (platform === 'biz') {
+      btn.textContent = 'Write My All Web Post + Image Prompt ⚡';
+      document.getElementById('post-label').textContent = 'Your All Web Page Post';
+      document.getElementById('loading-text').textContent = 'Putting on the All Web hat...';
+    } else {
+      btn.textContent = 'Write My Post + Image Prompt 🔥';
+      document.getElementById('post-label').textContent = 'Your Facebook Post';
+      document.getElementById('loading-text').textContent = 'Cooking something up in your voice...';
+    }
   }
+
+  function setTemplate(tplKey) {
+    if (currentPlatform !== 'li') return;
+    currentTemplate = tplKey;
+    document.querySelectorAll('.tpl-btn').forEach(btn => btn.classList.remove('selected'));
+    const target = document.getElementById('tpl-' + tplKey);
+    if (target) target.classList.add('selected');
+  }
+
+  function setLens(lensKey) {
+    if (currentPlatform !== 'li') return;
+    currentLens = lensKey;
+    document.querySelectorAll('.lens-btn').forEach(btn => btn.classList.remove('selected'));
+    const target = document.getElementById('lens-' + lensKey);
+    if (target) target.classList.add('selected');
+  }
+
+  // Init default template selected state so it shows on LI switch
+  document.getElementById('tpl-none').classList.add('selected');
 
   function setMode(mode) {
     currentMode = mode;
@@ -152,6 +406,14 @@
     document.getElementById('btn-url').classList.toggle('active', mode === 'url');
     document.getElementById('topic-input').style.display = mode === 'topic' ? 'block' : 'none';
     document.getElementById('url-input').style.display = mode === 'url' ? 'block' : 'none';
+  }
+
+  function getLensAddition() {
+    if (currentPlatform !== 'li' || currentLens !== 'operator') return '';
+    return `
+
+OPERATOR LENS (apply this before writing):
+Before writing a single word, ask: what does this topic mean for someone running a service business who wants to grow, scale, and move faster? Lead with the implication, not the information. The reader is a service business owner — a consultant, agency operator, coach, freelancer, or local business owner. They don't need a recap of the topic. They need to know what Monday morning looks like differently because of it. Translate data points into decisions. Translate trends into tactics. Translate insights into competitive moves. The post should feel like advice from someone who's already applied the lesson — not a summary of something they could have read themselves.`;
   }
 
   function getSystemPrompt() {
@@ -179,31 +441,65 @@ POST FORMAT:
 - 100-250 words max. Punchy but complete.
 - End with something that makes them think, not something that makes them click.`;
 
+    const bizPrompt = `You are the All Web LLC business Facebook page voice, written by Terassah Thompson. Terassah is an AI Operations Specialist with 12+ years in digital marketing, an MBA, an MA in I/O Psychology, and a U.S. Army veteran. All Web LLC is her boutique AI operations and digital marketing consultancy in Newnan, GA, built around the S.W.I.F.T. Method.
+
+The audience is local business owners in Newnan, Coweta County, and Metro Atlanta -- people running real businesses who need marketing and AI explained in plain language by someone who actually does the work. This is the MIDDLE GROUND between her personal page and LinkedIn: still warm, still conversational, but representing the brand.
+
+VOICE RULES (strict):
+- Conversational and approachable, but professional. Lighter on the AAVE than her personal page -- think friendly expert at a local chamber mixer, not texting your cousin.
+- Educational first. Lead with what the audience needs to know, not what All Web sells.
+- Storytelling welcome. Real receipts only. No exaggeration.
+- "Real talk..." / "Look..." / "The truth is..." still work as transitions
+- NO em dashes ever
+- NO corporate jargon. Ever.
+- NO "Here is" or "Here are"
+- NO hype. No "game-changing." No "revolutionary."
+- First person singular only. NEVER "we." The brand is one person and that is the point.
+- A SOFT CTA is allowed at the end -- but ONLY if it flows naturally from the topic. If the post is about a marketing trend, a platform change, or a tactical insight, ask yourself: does an audit invitation actually follow from this? If yes, one line max, invitation energy not hustle energy, use allwebllc.com/audit as the link. If it does not follow naturally, end with a thought-provoker instead. Never staple a CTA to a post that doesn't earn it.
+- Emojis: 2-3 max, purposeful.
+- Hashtags: 2-3 local/relevant ones at the end are fine (e.g. #NewnanGA #SmallBusiness), never a wall of them.
+
+POST FORMAT:
+- Facebook business page post. No headers, no bullet walls. Short paragraphs.
+- 100-200 words. Local business owners scroll fast.
+- Open with the thing that affects THEIR business, not with All Web.
+- Close with either a thought-provoker or the one-line soft CTA, whichever fits the post better.`;
+
+    const tpl = templates[currentTemplate];
     const liPrompt = `You are Terassah Thompson's LinkedIn content voice. Terassah is an AI Operations Specialist with 12+ years in digital marketing, an MBA, an MA in I/O Psychology, and a U.S. Army veteran. She runs All Web LLC in Newnan, GA and is simultaneously pursuing a W-2 role in marketing/AI operations.
 
 Her LinkedIn audience is marketing professionals, hiring managers, agency leaders, and fellow operators who respect strategic thinking and real talk from someone who's been in the field.
 
+CONTENT STRATEGY PRINCIPLES (apply always):
+- Growing an audience is a 50/50 split: making proven ideas feel uniquely yours (weaving in your own stories, perspectives, voice, examples) AND building relationships with people already in motion.
+- Jab-Jab-Right Hook: serve first, build goodwill, ask rarely. 80-90% of posts give value, not sell.
+- Every post needs a purpose. Lead with top-of-funnel content. Know where you're directing attention.
+- The hook is the post. Strong opening line stops the scroll.
+- Failure and embarrassment are assets. Stop hiding what makes you human.
+- Your unique knowledge and experience are your moat. Why would someone listen to YOU? Answer that first.
+${getLensAddition()}
+
 VOICE RULES (strict):
-- Strategic operator energy. She's the authority in the room without announcing it.
+- Strategic operator energy. Authority in the room without announcing it.
 - Contrarian insights welcome. She sees what others miss.
 - Professional but grounded. Not stiff. Not corporate robot.
 - Quiet confidence. No chest-pounding. The receipts speak.
-- Financial and business authority positioning -- she thinks in systems and outcomes.
 - "The truth is..." / "Look..." / "Most people don't realize..." are good openers
 - NO em dashes ever
 - NO corporate jargon. Ever. ("synergies", "leverage", "ecosystem" = trash)
 - NO "Here is" or "Here are"
 - NO hype. No "game-changing." No "revolutionary."
-- 3-5 strategic hashtags at the end ONLY -- relevant, not performative
+- 3-5 strategic hashtags at the end ONLY
 - NO desperate CTAs. A soft invitation is fine if natural.
 - First person singular only. Never "we."
-- Emojis: very selective. 1-2 max. Professional context.
+- Emojis: very selective. 1-2 max.
 
 POST FORMAT:
-- LinkedIn post. No headers. Short paragraphs with line breaks for scroll readability.
+- No headers. Short paragraphs with line breaks for scroll readability.
 - 150-300 words. Enough to establish authority, not enough to lose them.
-- Strong opening line that stops the scroll -- a provocation, a surprising stat, or a blunt truth.
-- End with a question or insight that invites thoughtful response.`;
+- Strong opening line — provocation, surprising stat, or blunt truth.
+- End with a question or insight that invites thoughtful response.
+${tpl ? '\nTEMPLATE STRUCTURE TO USE:\n' + tpl.prompt : ''}`;
 
     const imageRules = `
 
@@ -218,13 +514,13 @@ OUTPUT FORMAT (use these exact separators):
 IMAGE PROMPT RULES:
 - The image must be DIRECTLY and VISUALLY connected to the specific topic of the post. Not a vibe. Not a person at a desk. Something a viewer would look at and immediately know what the post is about.
 - Think like a photo editor at a magazine: what single image would stop someone mid-scroll and make them understand the topic instantly?
-- Examples of topic-specific thinking: YouTube AI cutting videos = film strip being sliced by a digital blade, or a phone screen with a YouTube play button and an AI scissors icon. Local SEO = a map pin glowing over a city neighborhood at night. Facebook algorithm = a tangled web of blue threads being sorted by a robotic hand.
+- Examples of topic-specific thinking: YouTube AI cutting videos = film strip being sliced by a digital blade. Local SEO = a map pin glowing over a city neighborhood at night. Facebook algorithm = a tangled web of blue threads being sorted by a robotic hand.
 - Style: editorial, bold, conceptual. Dark background preferred. Cinematic lighting. No clipart energy.
 - If a person is shown: Black woman, natural lighting, skin texture visible, confident and unbothered. NOT stock photo. Editorial only.
 - NO text, NO words, NO watermarks, NO overlays, NO logos in the image. Photo or illustration only.
 - 3-5 sentences. Specific enough that a stranger could generate exactly what you mean.`;
 
-    return (currentPlatform === 'fb' ? fbPrompt : liPrompt) + imageRules;
+    return (currentPlatform === 'fb' ? fbPrompt : currentPlatform === 'biz' ? bizPrompt : liPrompt) + imageRules;
   }
 
   async function generatePost() {
@@ -251,11 +547,14 @@ IMAGE PROMPT RULES:
     loading.classList.add('visible');
     outputCard.classList.remove('visible');
     errorMsg.classList.remove('visible');
+    document.getElementById('remix-output').classList.remove('visible');
 
-    const platformLabel = currentPlatform === 'fb' ? 'personal Facebook' : 'LinkedIn';
+    const platformLabel = currentPlatform === 'fb' ? 'personal Facebook' : currentPlatform === 'biz' ? 'All Web LLC business Facebook page' : 'LinkedIn';
+    const tpl = templates[currentTemplate];
+    const templateNote = (currentPlatform === 'li' && tpl) ? ` using the ${tpl.name} structure` : '';
     const userPrompt = currentMode === 'topic'
-      ? `Create a ${platformLabel} post + image prompt about this topic:\n\n${userInput}`
-      : `Create a ${platformLabel} post + image prompt based on this:\n\n${userInput}\n\nMake it relevant and accessible for my audience.`;
+      ? `Create a ${platformLabel} post${templateNote} + image prompt about this topic:\n\n${userInput}`
+      : `Create a ${platformLabel} post${templateNote} + image prompt based on this:\n\n${userInput}\n\nMake it relevant and accessible for my audience.`;
 
     try {
       const response = await fetch("https://api.anthropic.com/v1/messages", {
@@ -263,7 +562,7 @@ IMAGE PROMPT RULES:
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           model: "claude-sonnet-4-6",
-          max_tokens: 1200,
+          max_tokens: 1400,
           system: getSystemPrompt(),
           messages: [{ role: "user", content: userPrompt }]
         })
@@ -281,10 +580,14 @@ IMAGE PROMPT RULES:
       const tip = tipMatch ? tipMatch[1].trim() : "";
       const img = imgMatch ? imgMatch[1].trim() : "";
 
+      lastGeneratedPost = post;
       postOutput.textContent = post;
       if (tip) { tipArea.textContent = "💡 " + tip; tipArea.style.display = "block"; }
       else { tipArea.style.display = "none"; }
       imgOutput.textContent = img || "Image prompt unavailable -- try regenerating.";
+
+      // Show/hide remix buttons based on current platform
+      updateRemixButtons();
       outputCard.classList.add('visible');
 
     } catch (err) {
@@ -295,10 +598,83 @@ IMAGE PROMPT RULES:
     }
   }
 
+  function updateRemixButtons() {
+    // Hide the remix button for the current platform — no point remixing to yourself
+    document.getElementById('remix-fb').style.display = currentPlatform === 'fb' ? 'none' : 'inline-flex';
+    document.getElementById('remix-biz').style.display = currentPlatform === 'biz' ? 'none' : 'inline-flex';
+    document.getElementById('remix-li').style.display = currentPlatform === 'li' ? 'none' : 'inline-flex';
+  }
+
+  async function remixPost(targetPlatform) {
+    if (!lastGeneratedPost) return;
+
+    const remixBtn = document.getElementById('remix-' + targetPlatform);
+    const remixOutput = document.getElementById('remix-output');
+    const remixText = document.getElementById('remix-post-text');
+    const remixOutputLabel = document.getElementById('remix-output-label-text');
+
+    const originalText = remixBtn.textContent;
+    remixBtn.innerHTML = '<span class="remix-spinner"></span>Remixing...';
+    remixBtn.classList.add('remix-loading');
+    remixBtn.disabled = true;
+    remixOutput.classList.remove('visible');
+
+    const rx = remixInstructions[targetPlatform];
+
+    const systemPrompt = `You are Terassah Thompson's content voice. Terassah is an AI Operations Specialist with 12+ years in digital marketing, an MBA, an MA in I/O Psychology, and a U.S. Army veteran. She runs All Web LLC in Newnan, GA. Your job is to remix an existing post for a different platform, following the exact instructions given. Return ONLY the remixed post text — no labels, no preamble, no image prompt, no separators.`;
+
+    const userPrompt = `${rx.instruction}\n\nOriginal post to remix:\n\n${lastGeneratedPost}`;
+
+    try {
+      const response = await fetch("https://api.anthropic.com/v1/messages", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          model: "claude-sonnet-4-6",
+          max_tokens: 800,
+          system: systemPrompt,
+          messages: [{ role: "user", content: userPrompt }]
+        })
+      });
+
+      const data = await response.json();
+      if (!response.ok) throw new Error(data.error?.message || "Remix hit a snag. Try again.");
+
+      const remixed = data.content?.[0]?.text?.trim() || "";
+      remixOutputLabel.textContent = rx.label;
+      remixText.textContent = remixed;
+      remixOutput.classList.add('visible');
+
+    } catch (err) {
+      remixText.textContent = "Remix failed — " + (err.message || "try again.");
+      remixOutput.classList.add('visible');
+    } finally {
+      remixBtn.textContent = originalText;
+      remixBtn.classList.remove('remix-loading');
+      remixBtn.disabled = false;
+    }
+  }
+
   function showError(msg) {
     const el = document.getElementById('error-msg');
     el.textContent = msg;
     el.classList.add('visible');
+  }
+
+  async function openChatGPT() {
+    const text = document.getElementById('img-output').textContent;
+    const btn = document.getElementById('chatgpt-btn');
+    try {
+      await navigator.clipboard.writeText(text);
+      btn.textContent = '✅ Copied — opening...';
+      setTimeout(() => {
+        window.open('https://chatgpt.com/gpts/editor', '_blank');
+        btn.textContent = '🤖 Open in ChatGPT';
+      }, 800);
+    } catch {
+      // Clipboard failed — just open ChatGPT
+      window.open('https://chatgpt.com', '_blank');
+    }
   }
 
   async function copyPost() {
@@ -320,6 +696,17 @@ IMAGE PROMPT RULES:
       btn.textContent = "Copied!";
       btn.classList.add('copied');
       setTimeout(() => { btn.textContent = "Copy Prompt"; btn.classList.remove('copied'); }, 2000);
+    } catch { btn.textContent = "Select + copy manually"; }
+  }
+
+  async function copyRemix() {
+    const text = document.getElementById('remix-post-text').textContent;
+    const btn = document.getElementById('remix-copy-btn');
+    try {
+      await navigator.clipboard.writeText(text);
+      btn.textContent = "Copied!";
+      btn.classList.add('copied');
+      setTimeout(() => { btn.textContent = "Copy"; btn.classList.remove('copied'); }, 2000);
     } catch { btn.textContent = "Select + copy manually"; }
   }
 </script>
